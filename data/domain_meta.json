@@ -1,0 +1,131 @@
+{
+  "key": "sapm-cre-urban-hollowing",
+  "meta_fill": {
+    "pi": "$13.5B",
+    "psa": "-$100.2B",
+    "mu": "0.119",
+    "kappa": "0.84"
+  },
+  "psf": {
+    "pi_c": 4.0,
+    "pi_p": 13.5,
+    "w_c": 113.7,
+    "kappa": 0.84
+  },
+  "monte_carlo": {
+    "mean": 8.45,
+    "ci_lo": 5.8,
+    "ci_hi": 13.2,
+    "pct_hw": 99.4,
+    "n_draws": 10000,
+    "channels": [
+      {
+        "name": "Property tax base erosion",
+        "dist": "triangular",
+        "lo": 25,
+        "hi": 65,
+        "mode": 42
+      },
+      {
+        "name": "Urban service reduction",
+        "dist": "triangular",
+        "lo": 18,
+        "hi": 48,
+        "mode": 31
+      },
+      {
+        "name": "Small business displacement",
+        "dist": "log-normal",
+        "lo": 12,
+        "hi": 38,
+        "mode": 22
+      },
+      {
+        "name": "Pedestrian economy loss",
+        "dist": "triangular",
+        "lo": 8,
+        "hi": 28,
+        "mode": 16
+      },
+      {
+        "name": "Transit ridership decline",
+        "dist": "uniform",
+        "lo": 5,
+        "hi": 18,
+        "mode": 11
+      },
+      {
+        "name": "Governance capture",
+        "dist": "triangular",
+        "lo": 2,
+        "hi": 10,
+        "mode": 5
+      }
+    ]
+  },
+  "thresholds": [
+    {
+      "domain": "Major U.S. downtown office vacancy >25%",
+      "year": 2024,
+      "confidence": "High",
+      "status": "San Francisco 35%, Chicago 25%, NYC 22% as of 2024",
+      "crossed": true
+    },
+    {
+      "domain": "First major city fiscal crisis from CRE value collapse",
+      "year": 2027,
+      "confidence": "Medium",
+      "status": "Chicago and San Francisco facing structural budget gaps",
+      "crossed": false
+    },
+    {
+      "domain": "Office-to-residential conversion momentum (>50K units/yr)",
+      "year": 2028,
+      "confidence": "Medium",
+      "status": "Current pipeline ~17K units/yr nationally; policy momentum building",
+      "crossed": false
+    },
+    {
+      "domain": "Downtown retail vacancy >30% in major markets",
+      "year": 2026,
+      "confidence": "High",
+      "status": "Already exceeded in San Francisco Union Square, Chicago Loop",
+      "crossed": true
+    }
+  ],
+  "axioms": {
+    "type": "institutional",
+    "items": [
+      {
+        "id": "I1",
+        "name": "Remote work demand shock permanence",
+        "description": "Post-pandemic hybrid work norms have permanently reduced peak office utilization to 40-60% of pre-2020 levels, structurally eliminating demand for existing Class B/C office stock."
+      },
+      {
+        "id": "I2",
+        "name": "Zoning conversion barriers",
+        "description": "Separate commercial and residential zoning codes, building code differences, and parking minimums prevent economically rational office-to-residential conversion, trapping capital in low-utilization buildings."
+      },
+      {
+        "id": "I3",
+        "name": "CRE loan extend-and-pretend",
+        "description": "Banks and property owners defer marking-to-market on distressed CRE loans, preventing price discovery and delaying adaptive reuse that would improve urban vitality."
+      }
+    ]
+  },
+  "methods": {
+    "welfare_function": "W measured as property tax base loss (fiscal impact), reduced city service quality, small business displacement, and pedestrian economy degradation across major U.S. downtown cores.",
+    "cooperative_baseline": "Office utilization at 75-80% of pre-pandemic baseline through hybrid work optimization, with adaptive reuse of surplus stock into residential and mixed-use, generating $4B in legitimate commercial service value.",
+    "key_sources": [
+      "CBRE, Office Market Statistics Q4 2024",
+      "Brookings Institution, Downtown recovery index (2024)",
+      "Moody's Analytics, CRE valuation risk report (2024)",
+      "Urban Land Institute, Office conversion feasibility (2024)"
+    ],
+    "falsification": [
+      "F1: Demonstrate that office utilization rates have returned to >80% of pre-pandemic levels in a major market, refuting the demand shock permanence thesis.",
+      "F2: Show that CRE value declines in downtown cores have not reduced municipal tax revenue or service quality in a well-controlled study.",
+      "F3: Demonstrate that zoning reforms enabling office-to-residential conversion at scale have been implemented and are filling the vacancy pipeline faster than vacancy accumulates."
+    ]
+  }
+}

@@ -12,8 +12,8 @@ import { BarChart, Bar, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, R
 const META = {
   title: "Commercial Real Estate and Urban Hollowing",
   subtitle: "System Welfare Cost of the Office Vacancy Crisis",
-  beta: "8.4",
-  ci: "5.9–12.1",
+  beta: "11.02",
+  ci: "8.01–14.91",
   pi: "$12–15B",
   psa: "deeply negative",
   mu: "0.12 (12%)",
@@ -69,23 +69,24 @@ const HIGHLIGHTS = [
         "PSF concavity confirmed: marginal welfare cost accelerates beyond 20% vacancy threshold (doom-loop mechanism, Gupta-Mittal-van Nieuwerburgh 2022).",
 ];
 
-const PSF_PARAMS = {pi_c:1.6,pi_p:13.5,w_c:67.5,kappa:0.85};
-const PSF_DATA = [{pi:0.16,w:66.66},{pi:0.86,w:67.28},{pi:1.55,w:67.5},{pi:2.25,w:67.33},{pi:2.94,w:66.77},{pi:3.64,w:65.81},{pi:4.33,w:64.48},{pi:5.03,w:62.73},{pi:5.72,w:60.62},{pi:6.42,w:58.09},{pi:7.12,w:55.15},{pi:7.81,w:51.88},{pi:8.51,w:48.15},{pi:9.2,w:44.1},{pi:9.9,w:39.59},{pi:10.59,w:34.75},{pi:11.29,w:29.46},{pi:11.99,w:23.76},{pi:12.68,w:17.76},{pi:13.38,w:11.28},{pi:14.07,w:4.5},{pi:14.77,w:-2.77},{pi:15.46,w:-10.33},{pi:16.16,w:-18.39},{pi:16.85,w:-26.73},{pi:17.55,w:-35.57}];
+const PSF_PARAMS = {pi_c:4.0,pi_p:13.5,w_c:113.7,kappa:0.84};
+const PSF_DATA = [{pi:0.4,w:99.98},{pi:0.97,w:103.98},{pi:1.54,w:107.3},{pi:2.12,w:109.96},{pi:2.69,w:111.88},{pi:3.26,w:113.12},{pi:3.83,w:113.67},{pi:4.4,w:113.53},{pi:4.97,w:112.7},{pi:5.55,w:111.16},{pi:6.12,w:108.94},{pi:6.69,w:106.04},{pi:7.26,w:102.45},{pi:7.83,w:98.18},{pi:8.4,w:93.21},{pi:8.98,w:87.45},{pi:9.55,w:81.1},{pi:10.12,w:74.06},{pi:10.69,w:66.34},{pi:11.26,w:57.92},{pi:11.83,w:48.82},{pi:12.41,w:38.85},{pi:12.98,w:28.36},{pi:13.55,w:17.18},{pi:14.12,w:5.32},{pi:14.69,w:-7.23},{pi:15.26,w:-20.47},{pi:15.84,w:-34.65},{pi:16.41,w:-49.28},{pi:16.98,w:-64.6},{pi:17.55,w:-80.6}];
 
-const MC_PARAMS = {n_draws:10000,mean:8.4,ci_lo:5.6,ci_hi:12.8,pct_hw:98.9,channels:[{name:"Municipal tax base erosion",dist:"log-normal",lo:3.2,hi:5.6},{name:"Transit and infrastructure stranding",dist:"triangular",lo:1.4,hi:3.0},{name:"Small business displacement cascade",dist:"log-normal",lo:0.8,hi:2.0},{name:"Urban services death spiral",dist:"uniform",lo:0.4,hi:1.2}]};
-const MC_DATA = [{bin:"1.1",count:4},{bin:"1.9",count:14},{bin:"2.7",count:39},{bin:"3.4",count:93},{bin:"4.2",count:195},{bin:"5.0",count:361},{bin:"5.7",count:590},{bin:"6.5",count:852},{bin:"7.3",count:1089},{bin:"8.0",count:1231},{bin:"8.8",count:1231},{bin:"9.5",count:1089},{bin:"10.3",count:852},{bin:"11.1",count:590},{bin:"11.8",count:361},{bin:"12.6",count:195},{bin:"13.4",count:93},{bin:"14.1",count:39},{bin:"14.9",count:14},{bin:"15.7",count:4}];
+const MC_HIST = [{bin:"7.12",lo:7.1244,hi:7.3171,count:56},{bin:"7.32",lo:7.3171,hi:7.5097,count:76},{bin:"7.51",lo:7.5097,hi:7.7024,count:99},{bin:"7.70",lo:7.7024,hi:7.8950,count:122},{bin:"7.90",lo:7.8950,hi:8.0877,count:168},{bin:"8.09",lo:8.0877,hi:8.2803,count:209},{bin:"8.28",lo:8.2803,hi:8.4730,count:253},{bin:"8.47",lo:8.4730,hi:8.6657,count:282},{bin:"8.67",lo:8.6657,hi:8.8583,count:326},{bin:"8.86",lo:8.8583,hi:9.0510,count:324},{bin:"9.05",lo:9.0510,hi:9.2436,count:345},{bin:"9.24",lo:9.2436,hi:9.4363,count:394},{bin:"9.44",lo:9.4363,hi:9.6289,count:350},{bin:"9.63",lo:9.6289,hi:9.8216,count:333},{bin:"9.82",lo:9.8216,hi:10.0142,count:345},{bin:"10.01",lo:10.0142,hi:10.2069,count:369},{bin:"10.21",lo:10.2069,hi:10.3995,count:368},{bin:"10.40",lo:10.3995,hi:10.5922,count:284},{bin:"10.59",lo:10.5922,hi:10.7849,count:340},{bin:"10.78",lo:10.7849,hi:10.9775,count:323},{bin:"10.98",lo:10.9775,hi:11.1702,count:316},{bin:"11.17",lo:11.1702,hi:11.3628,count:281},{bin:"11.36",lo:11.3628,hi:11.5555,count:274},{bin:"11.56",lo:11.5555,hi:11.7481,count:291},{bin:"11.75",lo:11.7481,hi:11.9408,count:231},{bin:"11.94",lo:11.9408,hi:12.1334,count:231},{bin:"12.13",lo:12.1334,hi:12.3261,count:242},{bin:"12.33",lo:12.3261,hi:12.5187,count:232},{bin:"12.52",lo:12.5187,hi:12.7114,count:212},{bin:"12.71",lo:12.7114,hi:12.9041,count:203},{bin:"12.90",lo:12.9041,hi:13.0967,count:195},{bin:"13.10",lo:13.0967,hi:13.2894,count:195},{bin:"13.29",lo:13.2894,hi:13.4820,count:177},{bin:"13.48",lo:13.4820,hi:13.6747,count:193},{bin:"13.67",lo:13.6747,hi:13.8673,count:141},{bin:"13.87",lo:13.8673,hi:14.0600,count:150},{bin:"14.06",lo:14.0600,hi:14.2526,count:114},{bin:"14.25",lo:14.2526,hi:14.4453,count:135},{bin:"14.45",lo:14.4453,hi:14.6379,count:115},{bin:"14.64",lo:14.6379,hi:14.8306,count:117},{bin:"14.83",lo:14.8306,hi:15.0233,count:97},{bin:"15.02",lo:15.0233,hi:15.2159,count:83},{bin:"15.22",lo:15.2159,hi:15.4086,count:67},{bin:"15.41",lo:15.4086,hi:15.6012,count:68},{bin:"15.60",lo:15.6012,hi:15.7939,count:49},{bin:"15.79",lo:15.7939,hi:15.9865,count:46},{bin:"15.99",lo:15.9865,hi:16.1792,count:26},{bin:"16.18",lo:16.1792,hi:16.3718,count:19},{bin:"16.37",lo:16.3718,hi:16.5645,count:16},{bin:"16.56",lo:16.5645,hi:16.7572,count:18}];
+const MC_STATS = {mean:11.0203,median:10.7357,ci_lo:8.0071,ci_hi:14.9068,pct_hw:100.0,pct_above_3:100.0,pct_above_5:100.0,min:6.3488,max:18.5383,n_draws:10000,seed:42};
+const MC_CHANNELS = [{name:"Property tax base erosion",mean:43.98,p5:30.97,p50:43.48,p95:58.28,share:0.2943},{name:"Urban service reduction",mean:32.37,p5:22.49,p50:32.01,p95:42.96,share:0.2166},{name:"Small business displacement",mean:38.69,p5:27.98,p50:38.05,p95:51.38,share:0.2589},{name:"Pedestrian economy loss",mean:17.24,p5:10.73,p50:16.97,p95:24.39,share:0.1153},{name:"Transit ridership decline",mean:11.51,p5:5.62,p50:11.57,p95:17.36,share:0.0770},{name:"Governance capture",mean:5.67,p5:3.11,p50:5.51,p95:8.61,share:0.0379}];
+const MC_WELFARE = {mean:149.45,ci_lo:127.55,ci_hi:172.62};
 
-const THRESHOLDS = [{domain:"Office vacancy rate structural shift",year:2023,status:"US office vacancy hit 19.6% Q4 2023, highest since 1991 (Moody’s CRE); San Francisco 36.7%; sublease space at record 260M sq ft",confidence:"High",crossed:true},{domain:"CRE loan maturity wall",year:2025,status:"$929B in CRE loans maturing 2024–2025 (MBA); refinancing gap estimated at $200–400B due to value declines of 25–40%",confidence:"High",crossed:true},{domain:"Municipal revenue crisis trigger",year:2027,status:"NYC office property tax revenue ($6.6B/yr, 10% of budget) under threat; assessed values down 20–30%",confidence:"Medium",crossed:false},{domain:"Adaptive reuse conversion wave",year:2030,status:"Office-to-residential conversions: only 63 projects completed nationally in 2023 (CBRE); structural and zoning barriers limit feasibility to ~10% of obsolete stock",confidence:"Low",crossed:false}];
+const THRESHOLDS = [{domain:"Major U.S. downtown office vacancy >25%",year:2024,confidence:"High",status:"San Francisco 35%, Chicago 25%, NYC 22% as of 2024",crossed:true},{domain:"First major city fiscal crisis from CRE value collapse",year:2027,confidence:"Medium",status:"Chicago and San Francisco facing structural budget gaps",crossed:false},{domain:"Office-to-residential conversion momentum (>50K units/yr)",year:2028,confidence:"Medium",status:"Current pipeline ~17K units/yr nationally; policy momentum building",crossed:false},{domain:"Downtown retail vacancy >30% in major markets",year:2026,confidence:"High",status:"Already exceeded in San Francisco Union Square, Chicago Loop",crossed:true}];
 
-const AXIOMS = {type:"institutional",items:[{id:"I1",name:"Property Tax Assessment Lag",description:"Commercial property tax assessments lag market values by 3–5 years in most jurisdictions; NYC’s assessment ratio for Class 4 (commercial) uses income capitalization that delays recognition of permanent vacancy shifts, creating a fiscal cliff."},{id:"I2",name:"CMBS Maturity Wall and Extend-and-Pretend",description:"Banks hold $1.9T in CRE debt (FDIC 2024); extend-and-pretend modifications defer recognition of losses—Community/regional banks with CRE > 300% of capital face FDIC enhanced supervision but forbearance remains widespread."},{id:"I3",name:"Zoning and Conversion Barriers",description:"Class B/C office buildings face $150–400/sq ft conversion costs; floor plate depth >45 ft, insufficient plumbing risers, and commercial zoning create regulatory and physical barriers to adaptive reuse at scale."}]};
+const AXIOMS = {type:"institutional",items:[{id:"I1",name:"Remote work demand shock permanence",description:"Post-pandemic hybrid work norms have permanently reduced peak office utilization to 40-60% of pre-2020 levels, structurally eliminating demand for existing Class B/C office stock."},{id:"I2",name:"Zoning conversion barriers",description:"Separate commercial and residential zoning codes, building code differences, and parking minimums prevent economically rational office-to-residential conversion, trapping capital in low-utilization buildings."},{id:"I3",name:"CRE loan extend-and-pretend",description:"Banks and property owners defer marking-to-market on distressed CRE loans, preventing price discovery and delaying adaptive reuse that would improve urban vitality."}]};
 
 const METHODS_DATA = {
-  welfare_function: "W = −[Tax_base_loss + Transit_ridership_decline × Subsidy_increase + Small_biz_closure × Employment_loss + Infrastructure_stranding]. NYC alone: $1.1T in office value at risk of 25–40% permanent write-down = $275–440B in wealth destruction.",
-  cooperative_baseline: "Orderly CRE repricing with proactive municipal fiscal adjustment, aggressive adaptive reuse incentives, and managed transit right-sizing; cooperative Π_C = $1.6B reflects stabilized rents in converted/right-sized portfolio.",
-  falsification: ["If office occupancy recovers to >85% in major metros by 2027, structural vacancy thesis is wrong.","If CRE values stabilize without municipal fiscal stress, welfare multiplication is overestimated.","If Monte Carlo robustness for β_W > 1 falls below 80%, point estimate is unreliable.","If adaptive reuse conversion achieves >20% of obsolete stock within 5 years, urban hollowing is self-correcting."],
-  key_sources: ["Moody’s Analytics CRE (2024). US Office Market Outlook Q4 2023.","Mortgage Bankers Association (2024). Commercial/Multifamily Mortgage Maturity Volumes.","Gupta, A., Mittal, V., & Van Nieuwerburgh, S. (2022). Work from Home and the Office Real Estate Apocalypse. NBER WP 30526.","CBRE (2024). US Office Adaptive Reuse Report.","NYC Comptroller (2024). Fiscal Impact of Remote Work on NYC Property Tax Revenue."]
+  welfare_function: "W measured as property tax base loss (fiscal impact), reduced city service quality, small business displacement, and pedestrian economy degradation across major U.S. downtown cores.",
+  cooperative_baseline: "Office utilization at 75-80% of pre-pandemic baseline through hybrid work optimization, with adaptive reuse of surplus stock into residential and mixed-use, generating $4B in legitimate commercial service value.",
+  falsification: ["F1: Demonstrate that office utilization rates have returned to >80% of pre-pandemic levels in a major market, refuting the demand shock permanence thesis.","F2: Show that CRE value declines in downtown cores have not reduced municipal tax revenue or service quality in a well-controlled study.","F3: Demonstrate that zoning reforms enabling office-to-residential conversion at scale have been implemented and are filling the vacancy pipeline faster than vacancy accumulates."],
+  key_sources: ["CBRE, Office Market Statistics Q4 2024","Brookings Institution, Downtown recovery index (2024)","Moody\'s Analytics, CRE valuation risk report (2024)","Urban Land Institute, Office conversion feasibility (2024)"]
 };
-
 
 // ─── Color palette ───────────────────────────────────────────────────────────
 const C = {
@@ -331,51 +332,58 @@ export default function PSTCREUrbanHollowingDashboard() {
             </div>
           </div>
         )}
-
         {/* MONTE CARLO TAB */}
         {tab === 'monte-carlo' && (
           <div>
-            <SectionTitle>Monte Carlo Robustness — {MC_PARAMS.n_draws.toLocaleString()} Draws</SectionTitle>
+            <SectionTitle>Monte Carlo Simulation — {MC_STATS.n_draws.toLocaleString()} Draws (seed={MC_STATS.seed})</SectionTitle>
             <div style={{background:C.panel,border:`1px solid ${C.border}`,borderRadius:4,padding:16,marginBottom:16}}>
-              <ResponsiveContainer width="100%" height={280}>
-                <BarChart data={MC_DATA} margin={{top:10,right:30,left:20,bottom:10}}>
+              <ResponsiveContainer width="100%" height={300}>
+                <BarChart data={MC_HIST} margin={{top:10,right:30,left:20,bottom:30}}>
                   <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.06)" />
-                  <XAxis dataKey="bin" stroke={C.muted} tick={{fontFamily:C.mono,fontSize:10}} />
+                  <XAxis dataKey="bin" stroke={C.muted} tick={{fontFamily:C.mono,fontSize:9}} angle={-45} textAnchor="end" interval={4} />
                   <YAxis stroke={C.muted} tick={{fontFamily:C.mono,fontSize:11}} />
-                  <Tooltip contentStyle={{background:C.panel,border:`1px solid ${C.border}`,fontFamily:C.mono,fontSize:12,color:C.text}} />
+                  <Tooltip contentStyle={{background:C.panel,border:`1px solid ${C.border}`,fontFamily:C.mono,fontSize:12,color:C.text}} formatter={(v)=>[v,'Draws']} />
                   <Bar dataKey="count" fill={C.gold} />
-                  <ReferenceLine x={MC_PARAMS.mean.toFixed(1)} stroke={C.crimson} strokeDasharray="5 5" label={{value:'β̄='+MC_PARAMS.mean,fill:C.crimson,fontFamily:C.mono,fontSize:11}} />
+                  <ReferenceLine x={MC_STATS.mean.toFixed(2)} stroke={C.crimson} strokeWidth={2} strokeDasharray="5 5" label={{value:'μ='+MC_STATS.mean.toFixed(2),fill:C.crimson,fontFamily:C.mono,fontSize:11,position:'top'}} />
                 </BarChart>
               </ResponsiveContainer>
             </div>
             <div style={{display:'flex',gap:12,flexWrap:'wrap',marginBottom:16}}>
-              <Metric label="MEAN β_W" value={MC_PARAMS.mean} color={C.gold} />
-              <Metric label="90% CI" value={'['+MC_PARAMS.ci_lo+', '+MC_PARAMS.ci_hi+']'} color={C.muted} />
-              <Metric label="% HOLLOW WIN" value={MC_PARAMS.pct_hw+'%'} color={MC_PARAMS.pct_hw > 90 ? C.crimson : C.gold} />
+              <Metric label="MEAN β_W" value={MC_STATS.mean.toFixed(2)} sub={'Median: '+MC_STATS.median.toFixed(2)} color={C.gold} />
+              <Metric label="90% CI" value={'['+MC_STATS.ci_lo.toFixed(2)+', '+MC_STATS.ci_hi.toFixed(2)+']'} sub={'Range: '+MC_STATS.min.toFixed(2)+'–'+MC_STATS.max.toFixed(2)} color={C.muted} />
+              <Metric label="% HOLLOW WIN" value={MC_STATS.pct_hw.toFixed(1)+'%'} sub={'β_W > 1 in all draws'} color={MC_STATS.pct_hw > 95 ? C.crimson : C.gold} />
+              <Metric label="% β_W > 3" value={MC_STATS.pct_above_3.toFixed(1)+'%'} color={MC_STATS.pct_above_3 > 90 ? C.crimson : C.gold} />
+              <Metric label="% β_W > 5" value={MC_STATS.pct_above_5.toFixed(1)+'%'} color={MC_STATS.pct_above_5 > 50 ? '#D97706' : C.gold} />
             </div>
-            {MC_PARAMS.channels && MC_PARAMS.channels.length > 0 && (
-              <div style={{padding:16,background:C.panel,border:`1px solid ${C.border}`,borderRadius:4}}>
-                <div style={{fontFamily:C.mono,fontSize:12,color:C.gold,marginBottom:8}}>DISTRIBUTION PARAMETERS</div>
-                <table style={{width:'100%',borderCollapse:'collapse',fontFamily:C.mono,fontSize:13}}>
-                  <thead><tr style={{borderBottom:`1px solid ${C.border}`}}>
-                    <th style={{padding:'6px 10px',textAlign:'left',color:C.gold}}>CHANNEL</th>
-                    <th style={{padding:'6px 10px',textAlign:'left',color:C.gold}}>DISTRIBUTION</th>
-                    <th style={{padding:'6px 10px',textAlign:'right',color:C.gold}}>LOW</th>
-                    <th style={{padding:'6px 10px',textAlign:'right',color:C.gold}}>HIGH</th>
-                  </tr></thead>
-                  <tbody>
-                    {MC_PARAMS.channels.map((ch,i) => (
-                      <tr key={i} style={{borderBottom:`1px solid rgba(255,255,255,0.04)`}}>
-                        <td style={{padding:'6px 10px',color:C.text}}>{ch.name}</td>
-                        <td style={{padding:'6px 10px',color:C.muted}}>{ch.dist}</td>
-                        <td style={{padding:'6px 10px',color:C.muted,textAlign:'right'}}>{ch.lo}</td>
-                        <td style={{padding:'6px 10px',color:C.muted,textAlign:'right'}}>{ch.hi}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            )}
+            <SectionTitle>Channel Welfare Contributions</SectionTitle>
+            <table style={{width:'100%',borderCollapse:'collapse',fontFamily:C.mono,fontSize:13}}>
+              <thead><tr style={{borderBottom:`1px solid ${C.border}`}}>
+                <th style={{padding:'8px 12px',textAlign:'left',color:C.gold}}>CHANNEL</th>
+                <th style={{padding:'8px 12px',textAlign:'right',color:C.gold}}>MEAN $B</th>
+                <th style={{padding:'8px 12px',textAlign:'right',color:C.gold}}>P5</th>
+                <th style={{padding:'8px 12px',textAlign:'right',color:C.gold}}>P50</th>
+                <th style={{padding:'8px 12px',textAlign:'right',color:C.gold}}>P95</th>
+                <th style={{padding:'8px 12px',textAlign:'right',color:C.gold}}>SHARE</th>
+              </tr></thead>
+              <tbody>
+                {MC_CHANNELS.map((ch,i) => (
+                  <tr key={i} style={{borderBottom:`1px solid rgba(255,255,255,0.04)`,background:i%2===0?C.panel:C.bg}}>
+                    <td style={{padding:'8px 12px',color:C.text,fontFamily:C.serif,fontSize:14}}>{ch.name}</td>
+                    <td style={{padding:'8px 12px',color:C.gold,textAlign:'right',fontWeight:600}}>{ch.mean.toFixed(1)}</td>
+                    <td style={{padding:'8px 12px',color:C.muted,textAlign:'right'}}>{ch.p5.toFixed(1)}</td>
+                    <td style={{padding:'8px 12px',color:C.muted,textAlign:'right'}}>{ch.p50.toFixed(1)}</td>
+                    <td style={{padding:'8px 12px',color:C.muted,textAlign:'right'}}>{ch.p95.toFixed(1)}</td>
+                    <td style={{padding:'8px 12px',color:C.muted,textAlign:'right'}}>{(ch.share*100).toFixed(1)}%</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <div style={{marginTop:16,padding:12,background:'rgba(245,158,11,0.06)',border:`1px solid rgba(245,158,11,0.15)`,borderRadius:4}}>
+              <div style={{fontFamily:C.mono,fontSize:11,color:C.muted}}>Total welfare cost: <span style={{color:C.gold}}>${MC_WELFARE.mean.toFixed(1)}B</span> (90% CI: ${MC_WELFARE.ci_lo.toFixed(1)}B – ${MC_WELFARE.ci_hi.toFixed(1)}B) · Source: sapm_monte_carlo.py (seed=42)</div>
+            </div>
+          </div>
+        )}
+
           </div>
         )}
 
