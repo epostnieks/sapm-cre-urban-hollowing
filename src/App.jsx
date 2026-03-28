@@ -384,9 +384,6 @@ export default function PSTCREUrbanHollowingDashboard() {
           </div>
         )}
 
-          </div>
-        )}
-
         {/* THRESHOLDS TAB */}
         {tab === 'thresholds' && (
           <div>
